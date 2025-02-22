@@ -1,26 +1,26 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+// src/App.tsx
+import React, { useState } from "react";
+import LandingPage from "./components/LandingPage";
+import AnimationScene from "./components/AnimationScene";
 
-function App() {
+interface GeneratedAssets {
+  characterImage: string;
+  backgroundImage: string;
+  font: string;
+}
+
+const App: React.FC = () => {
+  const [assets, setAssets] = useState<GeneratedAssets | null>(null);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      {!assets ? (
+        <LandingPage onSubmit={(data) => setAssets(data)} />
+      ) : (
+        <AnimationScene assets={assets} />
+      )}
     </div>
   );
-}
+};
 
 export default App;

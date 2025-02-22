@@ -1,0 +1,22 @@
+/* src/components/LandingPage.css */
+.landing-container {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.landing-container h1 {
+  margin-bottom: 20px;
+}
+
+.landing-input {
+  width: 300px;
+  padding: 10px;
+  font-size: 16px;
+}
+
+.landing-button {
+  padding: 10px 20px;
+  margin-left: 10px;
+  font-size: 16px;
+  cursor: pointer;
+}
